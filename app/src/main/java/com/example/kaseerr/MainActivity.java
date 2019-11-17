@@ -3,6 +3,7 @@ package com.example.kaseerr;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,8 +35,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private DatabaseHandler db;
     String kodeBrg;
     String namaBrg;
-    String kategoriBrg;
-    int hargaBrg;
+    String satuanBrg;
+    int hrgBeli;
+    int hrgJual;
+    int diskonn;
 
     BarangAdapter barangAdapter;
     private List<BarangModel> barangList = new ArrayList<>();
@@ -45,9 +48,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        inisializationView();
-//        databaseCall();
-//        recyclerViewInit();
+        inisializationView();
+        databaseCall();
+        recyclerViewInit();
         
         simpan = findViewById(R.id.btnSimpan);
         simpan.setOnClickListener(this);
@@ -68,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dbHandler.getWritableDatabase();
 
         db = new DatabaseHandler(this);
+        Log.d("TAG", db.getAllRecord().toString());
         barangList.addAll(db.getAllRecord());
     }
 
@@ -85,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view == simpan){
             getViewsData();
 
-            BarangModel barangModel = new BarangModel(kodeBrg, namaBrg, kategoriBrg, hargaBrg);
+            BarangModel barangModel = new BarangModel(kodeBrg, namaBrg, satuanBrg, hrgBeli, hrgJual, diskonn);
 
             DatabaseHandler db = new DatabaseHandler(this);
 
@@ -99,8 +103,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void getViewsData(){
         kodeBrg = kodeBarang.getText().toString();
         namaBrg = namaBarang.getText().toString();
-        kategoriBrg = kategoriBarang.getText().toString();
-        hargaBrg = Integer.parseInt(hargaBarang.getText().toString());
+        satuanBrg = satuanBarang.getText().toString();
+        hrgBeli = Integer.parseInt(hargaBeli.getText().toString());
+        hrgJual = Integer.parseInt(hargaJual.getText().toString());
+        diskonn = Integer.parseInt(diskon.getText().toString());
     }
 
     @Override

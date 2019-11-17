@@ -39,8 +39,10 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.MyViewHold
 
         holder.TxtKode.setText(barangModel.getKode());
         holder.TxtNama.setText(barangModel.getNama());
-        holder.TxtHarga.setText(Integer.toString(barangModel.getHarga_beli()));
-        holder.TxtKategori.setText(barangModel.getQty());
+        holder.TxtSatuan.setText(barangModel.getQty());
+        holder.TxtHargaBeli.setText(String.valueOf(barangModel.getHarga_beli()));
+        holder.TxtHargaJual.setText(String.valueOf(barangModel.getHarga_beli()));
+        holder.TxtHargaJual.setText(String.valueOf(barangModel.getDiskon()));
     }
 
     @Override
@@ -52,16 +54,20 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.MyViewHold
 
         TextView TxtKode;
         TextView TxtNama;
-        TextView TxtKategori;
-        TextView TxtHarga;
+        TextView TxtSatuan;
+        TextView TxtHargaBeli;
+        TextView TxtHargaJual;
+        TextView TxtDiskon;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             TxtKode = itemView.findViewById(R.id.kode);
             TxtNama = itemView.findViewById(R.id.nama);
-            TxtKategori = itemView.findViewById(R.id.kategori);
-            TxtHarga = itemView.findViewById(R.id.harga);
+            TxtSatuan = itemView.findViewById(R.id.satuan);
+            TxtHargaBeli = itemView.findViewById(R.id.hargabeli);
+            TxtHargaJual = itemView.findViewById(R.id.hargaJual);
+            TxtDiskon = itemView.findViewById(R.id.diskooon);
 
             itemView.setOnClickListener(this);
         }

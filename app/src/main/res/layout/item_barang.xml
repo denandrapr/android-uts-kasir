@@ -8,27 +8,41 @@
         android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"/>
+        android:text="Kode"/>
 
     <TextView
         android:id="@+id/nama"
         android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"/>
+        android:text="Nama"/>
 
     <TextView
-        android:id="@+id/kategori"
+        android:id="@+id/satuan"
         android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"/>
+        android:text="Qty"/>
 
     <TextView
-        android:id="@+id/harga"
+        android:id="@+id/hargabeli"
         android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"/>
+        android:text="Harga beli"/>
+
+    <TextView
+        android:id="@+id/hargajual"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Harga jual"/>
+
+    <TextView
+        android:id="@+id/diskooon"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diskon"/>
 
 </LinearLayout>
